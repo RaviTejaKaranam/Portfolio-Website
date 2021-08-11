@@ -1,0 +1,17 @@
+.project-image{
+  width: 40vw;
+}
+
+.project-image img{
+  width: 100%;
+}
+
+@media(max-width : 1000px){
+  .project-image{
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .project-image img{
+    width: 100%;
+  }
+}

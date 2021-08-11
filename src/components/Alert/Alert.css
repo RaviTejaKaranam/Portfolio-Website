@@ -1,0 +1,49 @@
+.alert {
+  position: fixed;
+  top: 0;
+  left: 80%;
+  opacity: 0;
+  background-color: var(--secondary-color);
+  font-family: inherit;
+  font-size: 1rem;
+  animation: scaleUp 5s ease-in;
+  text-align: center;
+  background-color: #ff3737;
+  width: 200px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2px;
+  color: #fff;
+}
+
+@keyframes scaleUp {
+  10%{
+    opacity: 1;
+    top : 10%;
+    left: 80%;
+  }
+  99%{
+    opacity: 1;
+    top : 10%;
+    left: 80%;
+  }
+}
+
+@media(max-width : 1000px){
+  .alert{
+    top : 0;
+    left : 10%;
+    width : 80%
+  }
+  @keyframes scaleUp {
+    10%{
+      opacity: 1;
+      top : 10%;
+      left: 10%;
+    }
+    99%{
+      opacity: 1;
+      top : 10%;
+      left: 10%;
+    }
+  }
+}

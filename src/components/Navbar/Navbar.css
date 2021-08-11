@@ -1,0 +1,131 @@
+.navbar {
+  padding: 1rem 0;
+  -webkit-box-shadow: 0 8px 6px -12px var(--primary-color);
+  -moz-box-shadow: 0 8px 6px -12px var(--primary-color);
+  box-shadow: 0 8px 6px -12px var(--primary-color);
+  position: fixed;
+  background-color: var(--secondary-color);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.nav-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav-div-mobile {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+.nav-icons {
+  display: flex;
+  align-items: center;
+}
+.nav-bars {
+  cursor: pointer;
+}
+
+.nav-list li {
+  margin: 3px 10px;
+  padding: 0 10px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.nav-list li:hover {
+  color: var(--primary-color);
+  transition: all 0.2s linear;
+}
+.mobile-links{
+  padding: 0 2rem;
+  display: none;
+}
+
+.nav-links-mobile .nav-list {
+  flex-direction: column;
+  text-align: center;
+  display: none;
+  opacity: 0;
+  animation: reveal 0.5s ease-in forwards;
+}
+
+.nav-links-mobile .nav-list li{
+  margin-bottom: 0.5rem;
+}
+
+.toggle,
+.toggle-mobile {
+  visibility: hidden;
+}
+.logo-icon-div {
+  display: none;
+}
+.label {
+  width: 40px;
+  height: 20px;
+  background-color: #000;
+  border: 1px solid #333;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+}
+.toggle:checked + .label,
+.toggle-mobile:checked + .label {
+  background-color: #fff;
+}
+
+.ball,
+.ball-mobile {
+  height: 14px;
+  width: 14px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.9px;
+  left: 3px;
+  transition: 0.3s linear;
+}
+
+.toggle:checked + .label .ball,
+.toggle-mobile:checked + .label .ball-mobile{
+  position: absolute;
+  background-color: #000;
+  top: 1.9px;
+  left: 21px;
+}
+
+@media (max-width: 740px) {
+  .nav-div {
+    display: none;
+  }
+  .nav-div-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+  .logo-icon-div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-links{
+    display: block;
+  }
+  @keyframes reveal{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+}

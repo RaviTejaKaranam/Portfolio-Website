@@ -1,0 +1,15 @@
+.square{
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: var(--overlay-color);
+}
+
+@media(max-width : 1000px){
+  .square{
+    bottom: 10%;
+  }
+}
