@@ -2,8 +2,8 @@ import React, { useState } from "react";
 //pvxgbeohdfdnaiey
 import Alert from "../Alert/Alert";
 import "./Contact.css";
-import emailJS from 'emailjs-com'
-import{ init } from 'emailjs-com';
+import emailJS from "emailjs-com";
+import { init } from "emailjs-com";
 init("user_NI2pCwRnGiHD3Mr6XuZ7J");
 const Contact = () => {
   const [userDetails, setUserDetails] = useState({
@@ -13,7 +13,7 @@ const Contact = () => {
     message: "",
     alert: "",
   });
-  const [buttonText, setButtonText] = useState("Send Message")
+  const [buttonText, setButtonText] = useState("Send Message");
   const handleChange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -46,8 +46,7 @@ const Contact = () => {
           alert: "",
         }));
       }, 2000);
-    }
-    else if (isEmail(userDetails.email) === false) {
+    } else if (isEmail(userDetails.email) === false) {
       setUserDetails((prevState) => ({
         ...prevState,
         alert: "Email is invalid",
@@ -59,29 +58,32 @@ const Contact = () => {
           alert: "",
         }));
       }, 2000);
-    }
-    else{
-      setButtonText("Sending...")
-      try{
-        const result = await emailJS.sendForm('service_hnmr6gt', 'template_y4id6mm', e.target, 'user_NI2pCwRnGiHD3Mr6XuZ7J')
-        setButtonText("Sent Successfully")
-        setUserDetails((prevState)=>({
+    } else {
+      setButtonText("Sending...");
+      try {
+        const result = await emailJS.sendForm(
+          "service_hnmr6gt",
+          "template_y4id6mm",
+          e.target,
+          process.env.REACT_APP_EMAILJS_USER_ID
+        );
+        setButtonText("Sent Successfully");
+        setUserDetails((prevState) => ({
           ...prevState,
           name: "",
           email: "",
           subject: "",
           message: "",
           alert: "",
-        }))
+        }));
 
-        setTimeout(()=>{
-          setButtonText("Send Message")
-        }, 3000)
-      }
-      catch(error){
-        console.log(error)
-        
-        setButtonText(error)
+        setTimeout(() => {
+          setButtonText("Send Message");
+        }, 3000);
+      } catch (error) {
+        console.log(error);
+
+        setButtonText(error);
       }
     }
   };
@@ -93,7 +95,7 @@ const Contact = () => {
 
       <div className="contact-heading">Contact</div>
       <div className="contact-form">
-        <form className="form" onSubmit = {(e) => handleSubmit(e)}>
+        <form className="form" onSubmit={(e) => handleSubmit(e)}>
           <div className="field">
             <input
               type="text"
