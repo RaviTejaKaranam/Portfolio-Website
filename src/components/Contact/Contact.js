@@ -83,7 +83,7 @@ const Contact = () => {
       } catch (error) {
         console.log(error);
 
-        setButtonText(error);
+        setButtonText("Failed to send");
       }
     }
   };
