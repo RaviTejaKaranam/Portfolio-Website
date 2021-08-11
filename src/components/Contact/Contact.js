@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Alert from "../Alert/Alert";
 import "./Contact.css";
 import emailJS from 'emailjs-com'
+import{ init } from 'emailjs-com';
+init("user_NI2pCwRnGiHD3Mr6XuZ7J");
 const Contact = () => {
   const [userDetails, setUserDetails] = useState({
     name: "",
