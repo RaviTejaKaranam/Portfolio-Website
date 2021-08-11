@@ -77,7 +77,8 @@ const Contact = () => {
       }
       catch(error){
         console.log(error)
-        setButtonText("Failed to send")
+        
+        setButtonText(error)
       }
     }
   };
