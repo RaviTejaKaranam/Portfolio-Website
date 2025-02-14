@@ -57,7 +57,7 @@ const About = () => {
                 <span className="bio-heading">Phone</span>
               </td>
               <td>
-                <span className="bio-data">+91 9121735497</span>
+                <span className="bio-data">+1 3527096319</span>
               </td>
             </tr>
           </tbody>
